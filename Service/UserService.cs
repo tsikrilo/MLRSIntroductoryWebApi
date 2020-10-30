@@ -61,6 +61,22 @@ namespace MLRSIntroductoryWebApi.Service
             {
                 throw new ArgumentNullException(nameof(userDto));
             }
+
+            if (userDto.Name.Length > 20)
+            {
+                throw new ArgumentOutOfRangeException(nameof(userDto.Name));
+            }
+
+            if (userDto.Surname.Length > 20)
+            {
+                throw new ArgumentOutOfRangeException(nameof(userDto.Surname));
+            }
+
+            if (userDto.EmailAddress.Length > 50)
+            {
+                throw new ArgumentOutOfRangeException(nameof(userDto.EmailAddress));
+            }
+
             return await _userRepository.UpdateUser(id, userDto);
         }
 
@@ -76,6 +92,22 @@ namespace MLRSIntroductoryWebApi.Service
             {
                 throw new ArgumentNullException(nameof(user));
             }
+
+            if (user.Name.Length > 20)
+            {
+                throw new ArgumentOutOfRangeException(nameof(user.Name));
+            }
+
+            if (user.Surname.Length > 20)
+            {
+                throw new ArgumentOutOfRangeException(nameof(user.Surname));
+            }
+
+            if (user.EmailAddress.Length > 50)
+            {
+                throw new ArgumentOutOfRangeException(nameof(user.EmailAddress));
+            }
+
             return await _userRepository.InsertUser(user);
         }
 
