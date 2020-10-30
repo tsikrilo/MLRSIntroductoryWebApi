@@ -1,0 +1,192 @@
+2020-10-30T09:23:12.8964865+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T09:23:12.9154752+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T09:23:12.9197944+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T09:28:13.0543662+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T09:28:13.0770778+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T09:28:13.0771840+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T09:32:56.9892323+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T09:32:56.9966243+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T09:32:56.9967529+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T12:03:26.7565360+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T12:03:26.7641911+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T12:03:26.7643113+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T12:09:59.0746066+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T12:09:59.0838007+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T12:09:59.0839340+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T12:55:28.5222037+02:00 80000257-0001-fd00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("25"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = Date), @p1='?' (Size = 50), @p2='?' (DbType = Boolean), @p3='?' (Size = 20), @p4='?' (Size = 20), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [User] SET [Birthdate] = @p0, [EmailAddress] = @p1, [IsActive] = @p2, [Name] = @p3, [Surname] = @p4, [UserTitleId] = @p5, [UserTypeId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;" (627a98df)
+2020-10-30T12:55:28.6319792+02:00 80000257-0001-fd00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"MLRSIntroductoryWebApi.Models.UserContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_User_ToUserTitle\". The conflict occurred in database \"LRS\", table \"dbo.UserTitle\", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d3e3ab4b-ec45-46a5-b869-e6959d46443d
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_User_ToUserTitle". The conflict occurred in database "LRS", table "dbo.UserTitle", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d3e3ab4b-ec45-46a5-b869-e6959d46443d
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MLRSIntroductoryWebApi.Data.UserRepository.UpdateUser(Int32 id, UserDTO userDto) in C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi\Data\UserRepository.cs:line 129
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+2020-10-30T13:05:06.0022147+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T13:05:06.0107360+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T13:05:06.0108938+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T13:05:45.1199528+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T13:05:45.1275573+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T13:05:45.1277469+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T13:27:48.5580054+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T13:27:48.5652574+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T13:27:48.5653885+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T13:50:12.1995009+02:00 80000165-0004-fd00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("8"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = Date), @p1='?' (Size = 50), @p2='?' (DbType = Boolean), @p3='?' (Size = 20), @p4='?' (Size = 20), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [User] SET [Birthdate] = @p0, [EmailAddress] = @p1, [IsActive] = @p2, [Name] = @p3, [Surname] = @p4, [UserTitleId] = @p5, [UserTypeId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;" (627a98df)
+2020-10-30T13:50:12.2503279+02:00 80000165-0004-fd00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"MLRSIntroductoryWebApi.Models.UserContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_User_ToUserType\". The conflict occurred in database \"LRS\", table \"dbo.UserType\", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a46ce111-110d-431a-9611-da6cb80a1e4b
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_User_ToUserType". The conflict occurred in database "LRS", table "dbo.UserType", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a46ce111-110d-431a-9611-da6cb80a1e4b
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MLRSIntroductoryWebApi.Data.UserRepository.UpdateUser(Int32 id, UserDTO userDto) in C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi\Data\UserRepository.cs:line 129
+   at MLRSIntroductoryWebApi.Service.UserService.EditUser(Int32 id, UserDTO userDto) in C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi\Service\UserService.cs:line 64
+2020-10-30T13:50:23.8717824+02:00 80000166-0004-fd00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("4"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = Date), @p1='?' (Size = 50), @p2='?' (DbType = Boolean), @p3='?' (Size = 20), @p4='?' (Size = 20), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [User] SET [Birthdate] = @p0, [EmailAddress] = @p1, [IsActive] = @p2, [Name] = @p3, [Surname] = @p4, [UserTitleId] = @p5, [UserTypeId] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;" (627a98df)
+2020-10-30T13:50:23.8769912+02:00 80000166-0004-fd00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"MLRSIntroductoryWebApi.Models.UserContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_User_ToUserType\". The conflict occurred in database \"LRS\", table \"dbo.UserType\", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a46ce111-110d-431a-9611-da6cb80a1e4b
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_User_ToUserType". The conflict occurred in database "LRS", table "dbo.UserType", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a46ce111-110d-431a-9611-da6cb80a1e4b
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MLRSIntroductoryWebApi.Data.UserRepository.UpdateUser(Int32 id, UserDTO userDto) in C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi\Data\UserRepository.cs:line 129
+   at MLRSIntroductoryWebApi.Service.UserService.EditUser(Int32 id, UserDTO userDto) in C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi\Service\UserService.cs:line 64
+2020-10-30T15:12:35.1081780+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T15:12:35.1171251+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T15:12:35.1172688+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
+2020-10-30T15:22:39.4735423+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-30T15:22:39.4819531+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-30T15:22:39.4821967+02:00  [INF] Content root path: "C:\Users\ktsik\source\repos\MLRSIntroductoryWebApi" (b5d60022)
